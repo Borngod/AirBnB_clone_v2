@@ -5,7 +5,7 @@ listening on 0.0.0.0, port 5000
 """
 from flask import Flask, render_template
 
-app = Flask("__name__")
+app = Flask(__name__)
 
 
 @app.route('/', strict_slashes=False)
@@ -41,11 +41,11 @@ def isnum(n):
 
 
 @app.route('/number_template/<int:n>', strict_slashes=False)
-def number_template(n):
+def number_template(n=None):
     """Function that displays an HTML page only if n is an integer"""
     if isinstance(n, int):
         return render_template("5-number.html", value=n)
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000, debug=None)
+    app.run(host="0.0.0.0", port=5000)
