@@ -8,10 +8,10 @@ from flask import Flask
 app = Flask("__name__")
 
 
-@app.route('/', strict_slashes=False)
+@app.route('/airbnb-onepage/', strict_slashes=False)
 def hello():
     """Function that displays Hello HBNB!"""
-    return "Hello HBNB!"
+    return "Hello Airbnb! This is the one-page route."
 
 
 if __name__ == "__main__":
